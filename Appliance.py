@@ -14,5 +14,6 @@ class WashineMachine(Appliance):
 
         self.hours = hours
 
-        s
+        
 class AirConditioner(Appliance):
+    pass 

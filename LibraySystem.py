@@ -22,3 +22,19 @@ class Book(Item):
         print(f"Year: {self.year}")
         print(f"Genre: {self.genre}")
         print(f"ISBN : {self.ISBN}")
+
+class DVD(Item):
+
+    def __init__(self, title, author, year, duration):
+        super().__init__(title, author, year)
+        self.duration = duration
+
+    def display_info(self):
+        super().display_info()
+
+        print(f"Title: {self.title}")
+        print(f"Author: {self.author}")
+        print(f"Year: {self.year}")
+        print(f"Duration: {self.duration}")
+
+    
