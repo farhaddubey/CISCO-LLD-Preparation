@@ -16,6 +16,6 @@ class Vehicle:
             self.speed = 0
 
     def display_info(self):
-        print(f "Brand : {self.brand}")
+        print(f"Brand : {self.brand}")
         print(f"Model: {self.model}")
         print(f"Speed: {self.speed}")
