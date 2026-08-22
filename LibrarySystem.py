@@ -15,5 +15,7 @@ class Member:
         self.name = name 
         self.borrowed_books = []
 
+    def borrow_book()
+
 class Library:
     pass

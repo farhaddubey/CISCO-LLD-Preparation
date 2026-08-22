@@ -1,40 +1,29 @@
-# 1. Entity
+from abc import ABC, abstractmethod
+from enum import Enum 
+from typing import Optional 
 
-class X:
-    def __init__(self):
-        pass
 
-# 2. Inheritance 
-class Y(X):
-    def __init__(self, ...):
-        super.__int__(...)
+class Status(Enum):
+    ACTIVE = "ACTIVE"
+    INACTIVE = "INACTIVE"
 
-# 3. Manager 
-class System:
+class BaseEntity(ABC):
 
-    def __init__(self):
-        self.items = []
+    def __init__(self, entity_id : int):
+        self.entity_id = entity_id
 
-    def add(self, item):
-        self.items.append(item)
+class Service:
 
-    def find(self, id):
-        for item in self.items:
-            if item.id == id:
-                return item
-        return None 
+    def __init__(eslf):
+        self.entities: dict[int, BaseEntity] = {}
 
-# 4. Business Operation 
+    def add(self, entity : BaseEntity) -> None:
 
-def perform_operation(...):
+        if entity.entity_id in self.entities:
+            raise ValueError("Already Exists")
 
-    entity = find(...)
+        self.entities[entity.entity_id] = entity 
 
-    if entity is None:
-        return False
+    def get(self, entity_id : int) -> Optional[BaseEntity]: 
 
-    if invalid:
-        return False
-
-    # update state 
-    return True 
+        return self.entities.get(entity_id)
